@@ -1,0 +1,888 @@
+/* Reset básico para todos los elementos */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* Heredar box-sizing de elementos padre */
+}
+
+/* Estilos para imágenes y elementos picture */
+img,
+picture {
+  max-width: 100%; /* Ancho máximo del 100% para responsividad */
+  display: block; /* Mostrar como bloque para evitar espacios extra */
+}
+
+/* Estilos para formularios (input, botones, textareas, select) */
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Heredar la fuente del elemento padre */
+}
+
+/* Estilos para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto; /* Comportamiento de desplazamiento normal */
+  }
+
+  /* Reducir duración de animaciones y transiciones */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Estilos base para la etiqueta html */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  box-sizing: border-box; /* Establecer box-sizing en todo el documento */
+}
+
+/* Estilos base para el body */
+body {
+  min-height: 100vh; /* Altura mínima del 100% del viewport */
+  color: white; /* Color del texto */
+  font-family: "Josefin Sans", sans-serif; /* Fuente del texto */
+  font-size: 1.6rem; /* Tamaño del texto */
+  text-rendering: optimizeSpeed; /* Mejor rendimiento del texto */
+}
+
+/* Estilos para encabezados */
+.loopstudios__heading {
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Estilos para encabezados primarios */
+.loopstudios__heading--primary {
+  max-width: 65rem;
+  font-size: 3.9rem;
+  font-weight: lighter;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+  border: 0.2rem solid white;
+  margin-top: 16rem;
+  padding: 2.2rem 2.5rem 1.5rem 2.5rem;
+}
+
+/* Ajustes responsivos para encabezados primarios */
+@media (min-width: 810px) {
+  .loopstudios__heading--primary {
+    font-size: 7rem;
+    margin-top: 14rem;
+    padding: 4rem 4rem 3rem 4rem;
+  }
+}
+
+/* Estilos para encabezados secundarios */
+.loopstudios__heading--secondary {
+  color: black;
+  font-size: 3.2rem;
+  line-height: 3rem;
+  font-weight: lighter;
+}
+
+/* Ajustes responsivos para encabezados secundarios */
+@media (min-width: 810px) {
+  .loopstudios__heading--secondary {
+    grid-column: 1/-1;
+  }
+}
+
+@media (min-width: 1140px) {
+  .loopstudios__heading--secondary {
+    font-size: 4.8rem;
+    line-height: 5rem;
+    text-align: left;
+    grid-row: 1/2;
+    grid-column: 1/3;
+  }
+}
+
+/* Estilos para encabezados terciarios */
+.loopstudios__heading--tertiary {
+  width: 40%;
+  font-size: 2.3rem;
+  text-align: left;
+  margin: 0 0 2rem 2rem;
+}
+
+/* Ajustes responsivos para encabezados terciarios */
+@media (min-width: 1140px) {
+  .loopstudios__heading--tertiary {
+    width: 70%;
+    font-size: 3.3rem;
+    margin: 0 0 3rem 4rem;
+    position: absolute;
+    bottom: 0;
+  }
+}
+/* Estilos básicos para .loopstudios__desc */
+.loopstudios__desc {
+  background-color: white; /* Fondo blanco */
+  color: black; /* Texto negro */
+  padding: 4rem 0; /* Espaciado interno de 4rem arriba y abajo */
+}
+
+/* Estilos para .loopstudios__desc en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__desc {
+    margin: -13rem 0 0 10rem; /* Margen personalizado */
+    padding: 6rem 5rem; /* Espaciado interno aumentado */
+  }
+}
+
+/* Estilos para .loopstudios__desc en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__desc {
+    text-align: left; /* Alineación del texto a la izquierda */
+    margin: 0 0 0 -16rem; /* Margen negativo a la izquierda */
+    padding: 10rem 0 0 10rem; /* Aumento del espaciado interno */
+    display: flex; /* Uso de Flexbox */
+    flex-direction: column; /* Elementos en columna */
+    justify-content: end; /* Alineación de los elementos al final */
+    align-self: end; /* Alineación propia al final */
+  }
+}
+
+/* Estilos para .loopstudios__text */
+.loopstudios__text {
+  max-width: 50rem; /* Ancho máximo */
+  color: #8c8c8c; /* Color del texto */
+  font-family: "Alata", sans-serif; /* Familia de fuente */
+  font-weight: 300; /* Grosor de la fuente */
+  line-height: 2.5rem; /* Altura de la línea */
+  margin: 1.5rem auto; /* Margen automático */
+}
+
+/* Estilos para .loopstudios__text en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__text {
+    font-size: 1.52rem; /* Tamaño de fuente aumentado */
+    margin: 2rem 0 0 0; /* Margen superior personalizado */
+  }
+}
+
+/* Estilos básicos para .loopstudios__nav--primary */
+.loopstudios__nav--primary {
+  visibility: hidden; /* Elemento inicialmente oculto */
+  opacity: 0; /* Totalmente transparente */
+  transition: all 0.5s; /* Transición suave durante 0.5s para todos los cambios */
+}
+
+/* Modificador para .loopstudios__nav--primary cuando es visible */
+.loopstudios__nav--primary.is-visible {
+  visibility: visible; /* Hace el elemento visible */
+  opacity: 1; /* Opacidad completa */
+  margin-top: 18rem; /* Margen superior grande */
+}
+
+/* Estilos para .loopstudios__nav--primary en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__nav--primary {
+    visibility: visible; /* Siempre visible en pantallas grandes */
+    opacity: 1; /* Opacidad completa */
+  }
+}
+
+/* Estilos para .loopstudios__nav--secondary en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__nav--secondary {
+    grid-column: 1/2; /* Posición en la primera columna de una cuadrícula */
+    grid-row: 2/-1; /* Posición desde la segunda fila hasta la última */
+  }
+}
+
+/* Estilos para .loopstudios__list */
+.loopstudios__list {
+  list-style: none; /* Sin estilo de lista (sin viñetas) */
+}
+
+/* Estilos básicos para .loopstudios__list--primary */
+.loopstudios__list--primary {
+  display: none; /* Inicialmente no se muestra */
+}
+
+/* Modificador para .loopstudios__list--primary cuando no está establecido */
+.loopstudios__list--primary.is-unset {
+  display: unset; /* Restablece el estilo de visualización */
+}
+
+/* Estilos para .loopstudios__list--primary en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__list--primary {
+    display: flex; /* Uso de Flexbox */
+    align-items: center; /* Alineación de elementos al centro verticalmente */
+    gap: 4rem; /* Espacio entre elementos */
+  }
+}
+
+/* Estilos base para .loopstudios__list--secondary */
+.loopstudios__list--secondary {
+  margin: 2rem 0; /* Margen superior e inferior */
+}
+
+/* Estilos para .loopstudios__list--secondary en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__list--secondary {
+    margin: 0; /* Elimina los márgenes */
+    display: flex; /* Usa Flexbox para la disposición */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    gap: 2rem; /* Espacio entre elementos */
+  }
+}
+
+/* Estilos para .loopstudios__list--secondary en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__list--secondary {
+    gap: 4rem; /* Aumenta el espacio entre elementos */
+  }
+}
+
+/* Estilos para .loopstudios__item, excepto el último */
+.loopstudios__item:not(:last-child) {
+  margin-bottom: 2.5rem; /* Margen inferior para cada elemento, excepto el último */
+}
+
+/* Estilos para .loopstudios__item en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__item:not(:last-child) {
+    margin: 0; /* Elimina los márgenes */
+  }
+}
+
+/* Estilos base para enlaces .loopstudios__link en estado normal y visitado */
+.loopstudios__link:link, .loopstudios__link:visited {
+  color: white; /* Color del texto */
+  font-size: 1.4rem; /* Tamaño de fuente */
+  font-family: "Alata", sans-serif; /* Familia de fuentes */
+  font-weight: 300; /* Grosor de la fuente */
+  text-decoration: none; /* Sin decoración de texto (sin subrayado) */
+  position: relative; /* Posicionamiento relativo para los pseudo-elementos */
+  display: inline-block; /* Display en bloque pero alineado como inline */
+}
+
+/* Estilo del pseudo-elemento after para .loopstudios__link */
+.loopstudios__link::after {
+  content: ""; /* Contenido vacío */
+  background-color: rgb(255, 255, 255); /* Color de fondo */
+  width: 50%; /* Ancho del elemento */
+  height: 0.1rem; /* Altura del elemento */
+  visibility: hidden; /* Inicialmente oculto */
+  opacity: 0; /* Totalmente transparente */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 100%; /* Posicionado al final del elemento */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%); /* Ajuste para centrar */
+  transition: all 0.3s; /* Transición suave para todos los cambios */
+}
+
+/* Estilos para el pseudo-elemento after de .loopstudios__link en hover y active */
+.loopstudios__link:hover::after, .loopstudios__link:active::after {
+  visibility: visible; /* Hace visible el elemento */
+  opacity: 1; /* Opacidad completa */
+  top: 140%; /* Posición ajustada */
+}
+
+/* Estilos base para enlaces .loopstudios__link--primary en estado normal y visitado */
+.loopstudios__link--primary:link, .loopstudios__link--primary:visited {
+  font-family: "Josefin Sans", sans-serif; /* Cambio de familia de fuente */
+  font-size: 2.5rem; /* Tamaño de fuente mayor */
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Estilos para .loopstudios__link--primary en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__link--primary:link, .loopstudios__link--primary:visited {
+    font-size: 4.5rem; /* Aumenta el tamaño de la fuente */
+  }
+}
+
+/* Estilos para .loopstudios__link--primary en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__link--primary:link, .loopstudios__link--primary:visited {
+    font-family: "Alata", sans-serif; /* Regresa a la familia de fuente original */
+    font-size: 1.4rem; /* Disminuye el tamaño de la fuente */
+    text-transform: unset; /* Remueve la transformación de texto a mayúsculas */
+  }
+}
+
+/* Estilos base para .loopstudios__header */
+.loopstudios__header {
+  padding-top: 4rem; /* Espaciado superior */
+}
+
+/* Estilos para .loopstudios__header en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__header {
+    padding-top: 6rem; /* Aumenta el espaciado superior */
+    display: flex; /* Uso de Flexbox */
+    align-items: end; /* Alineación de elementos al final verticalmente */
+    justify-content: space-between; /* Espaciado entre elementos */
+  }
+}
+
+/* Estilos base para .loopstudios__header--mobile */
+.loopstudios__header--mobile {
+  width: 100%; /* Ancho completo */
+  min-height: 100vh; /* Altura mínima del 100% de la altura de la ventana */
+  background-color: #000; /* Color de fondo negro */
+  padding: 4rem 2.5rem; /* Espaciado interno */
+  visibility: hidden; /* Inicialmente oculto */
+  opacity: 0; /* Totalmente transparente */
+  position: fixed; /* Posicionamiento fijo */
+  top: 0; /* Arriba del todo */
+  left: 0; /* Izquierda del todo */
+  transition: all 0.5s; /* Transición suave para todos los cambios */
+}
+
+/* Estilos para .loopstudios__header--mobile en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__header--mobile {
+    padding: 4rem 8.5rem; /* Aumento del espaciado interno */
+  }
+}
+
+/* Estilos para el encabezado móvil de Loopstudios cuando está visible */
+.loopstudios__header--mobile.is-visible {
+  visibility: visible; /* Hace el elemento visible */
+  opacity: 1; /* Opacidad completa para mostrarlo */
+}
+
+/* Estilos base para el logo de Loopstudios */
+.loopstudios__logo {
+  width: 14rem; /* Ancho del logo */
+}
+
+/* Estilos para el logo de Loopstudios en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__logo {
+    width: 20rem; /* Aumenta el ancho del logo */
+  }
+}
+
+/* Estilos para el logo de Loopstudios en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__logo {
+    width: 19rem; /* Ajusta el ancho del logo */
+  }
+}
+
+/* Estilos para el logo secundario de Loopstudios en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__logo--secondary {
+    width: 14rem; /* Ancho del logo secundario */
+  }
+}
+
+/* Estilos para ocultar el icono de hamburguesa en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__icon-hamburger {
+    display: none; /* Oculta el icono de hamburguesa */
+  }
+}
+
+/* Estilos base para los botones de Loopstudios */
+.loopstudios__btn {
+  width: 16rem; /* Ancho del botón */
+  color: black; /* Color del texto */
+  background: unset; /* Fondo transparente */
+  font-size: 1.4rem; /* Tamaño de la fuente */
+  font-weight: 300; /* Grosor de la fuente */
+  font-family: "Alata", sans-serif; /* Familia de fuentes */
+  border: 0.2rem solid black; /* Borde del botón */
+  text-align: center; /* Texto centrado */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 0.5rem; /* Espaciado entre letras */
+  margin-top: 3rem; /* Margen superior */
+  padding: 1rem; /* Espaciado interno */
+  justify-self: center; /* Centrado en su contenedor */
+  transition: all 0.3s; /* Transición suave para todos los cambios */
+}
+
+/* Estilos para el botón de Loopstudios al pasar el mouse */
+.loopstudios__btn:hover {
+  color: white; /* Cambia el color del texto */
+  background-color: rgb(0, 0, 0); /* Cambia el color de fondo */
+  cursor: pointer; /* Cambia el cursor a puntero */
+}
+
+/* Estilos para el botón de Loopstudios en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__btn {
+    grid-column: 1/-1; /* Ocupa todas las columnas en una grilla */
+  }
+}
+
+/* Estilos para el botón de Loopstudios en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__btn {
+    margin: 0; /* Elimina los márgenes */
+    justify-self: end; /* Alinea a la derecha en su contenedor */
+    grid-row: 1/2; /* Ocupa la primera fila en una grilla */
+  }
+}
+
+/* Estilos para el botón estilo hamburguesa */
+.loopstudios__btn--hamburger {
+  all: unset; /* Elimina todos los estilos por defecto */
+  border: 0; /* Elimina el borde */
+}
+
+/* Estilos base para contenedores en Loopstudios */
+.loopstudios__container, .loopstudios__creations {
+  padding: 0 2.5rem; /* Espaciado interno horizontal */
+}
+
+/* Estilos para contenedores en Loopstudios en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__container, .loopstudios__creations {
+    padding: 0 8rem; /* Aumenta el espaciado interno horizontal */
+  }
+}
+
+/* Estilos para contenedores en Loopstudios en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__container, .loopstudios__creations {
+    padding: 0 16rem; /* Aumenta aún más el espaciado interno horizontal */
+  }
+}
+
+/* Estilos base para el contenedor del logo en Loopstudios */
+.loopstudios__wrapper-logo {
+  display: flex; /* Uso de Flexbox */
+  align-items: center; /* Alineación vertical al centro */
+  justify-content: space-between; /* Espaciado entre elementos */
+}
+
+/* Estilos para el copyright en Loopstudios en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__wrapper-copyright {
+    text-align: right; /* Alinea el texto a la derecha */
+  }
+}
+
+/* Estilos base para el héroe de Loopstudios */
+.loopstudios__hero {
+  min-height: 65.5rem; /* Altura mínima */
+  background-image: url("./../images/mobile/image-hero.jpg"); /* Imagen de fondo */
+  background-repeat: no-repeat; /* La imagen de fondo no se repite */
+  background-size: cover; /* La imagen de fondo cubre todo el espacio disponible */
+  background-position: center; /* La imagen de fondo centrada */
+}
+
+/* Estilos para .loopstudios__hero en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__hero {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./../images/desktop/image-hero.jpg"); /* Imagen de fondo con gradiente oscuro */
+  }
+}
+
+/* Estilos base para .loopstudios__intro */
+.loopstudios__intro {
+  padding: 9rem 0 3rem 0; /* Espaciado interno */
+  text-align: center; /* Texto centrado */
+}
+
+/* Estilos para .loopstudios__intro en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__intro {
+    padding: 16rem 0 18rem 0; /* Aumenta el espaciado interno */
+  }
+}
+
+/* Estilos base para .loopstudios__intro-img */
+.loopstudios__intro-img {
+  min-height: 22.8rem; /* Altura mínima */
+  background-image: url("./../images/mobile/image-interactive.jpg"); /* Imagen de fondo */
+  background-repeat: no-repeat; /* Sin repetición de imagen */
+  background-size: cover; /* Imagen cubre el espacio */
+  background-position: top; /* Imagen alineada arriba */
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+/* Estilos para .loopstudios__intro-img en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__intro-img {
+    min-height: 44.8rem; /* Aumenta la altura mínima */
+    background-image: url("./../images/desktop/image-interactive.jpg"); /* Cambia la imagen de fondo */
+    margin: 0; /* Elimina los márgenes */
+  }
+}
+
+/* Estilos base para .loopstudios__creations */
+.loopstudios__creations {
+  text-align: center; /* Texto centrado */
+}
+
+/* Estilos para .loopstudios__creations en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creations {
+    text-align: left; /* Texto alineado a la izquierda */
+  }
+}
+
+/* Estilos base para .loopstudios__creation */
+.loopstudios__creation {
+  min-height: 12rem; /* Altura mínima */
+  background-repeat: no-repeat; /* Sin repetición de imagen */
+  background-size: cover; /* Imagen cubre el espacio */
+  background-position: left, top; /* Imagen alineada a la izquierda y arriba */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  display: flex; /* Uso de Flexbox */
+  align-items: flex-end; /* Alineación de elementos al final */
+  position: relative; /* Posicionamiento relativo */
+  transition: all 0.3s; /* Transición suave */
+}
+
+/* Estilos para el pseudo-elemento before de .loopstudios__creation */
+.loopstudios__creation::before {
+  content: ""; /* Contenido vacío */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)); /* Gradiente claro */
+  position: absolute; /* Posicionamiento absoluto */
+  inset: 0; /* Ajuste a los bordes del elemento padre */
+  visibility: hidden; /* Inicialmente oculto */
+  opacity: 0; /* Totalmente transparente */
+  transition: all 0.6s; /* Transición más lenta */
+}
+
+/* Estilos para .loopstudios__creation al pasar el mouse */
+.loopstudios__creation:hover {
+  color: black; /* Cambia el color del texto */
+  cursor: pointer; /* Cambia el cursor a puntero */
+}
+
+/* Estilos para el pseudo-elemento before de .loopstudios__creation en hover */
+.loopstudios__creation:hover::before {
+  visibility: visible; /* Hace visible el pseudo-elemento */
+  opacity: 1; /* Opacidad completa */
+}
+
+/* Estilos para .loopstudios__creation en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation {
+    min-height: 45rem; /* Aumenta la altura mínima */
+    background-repeat: no-repeat; /* Sin repetición de imagen */
+    background-size: cover, cover; /* Imagen cubre el espacio */
+    background-position: bottom, center; /* Imagen alineada abajo y al centro */
+  }
+}
+
+/* Estilos para .loopstudios__creation en pantallas de al menos 1710px de ancho */
+@media (min-width: 1710px) {
+  .loopstudios__creation {
+    min-height: 57rem; /* Aumenta aún más la altura mínima */
+  }
+}
+
+/* Estilos para la variante "earth" de .loopstudios__creation */
+.loopstudios__creation--earth {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("./../images/mobile/image-deep-earth.jpg"); /* Imagen de fondo con gradiente oscuro */
+}
+
+/* Estilos para la variante "earth" de .loopstudios__creation en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation--earth {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("./../images/desktop/image-deep-earth.jpg"); /* Cambia la imagen de fondo y ajusta el gradiente */
+  }
+}
+
+/* Estilos para la variante "arcade" de .loopstudios__creation */
+.loopstudios__creation--arcade {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("./../images/mobile/image-night-arcade.jpg"); /* Imagen de fondo con gradiente oscuro */
+}
+
+/* Estilos para .loopstudios__creation--arcade en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation--arcade {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("./../images/desktop/image-night-arcade.jpg"); /* Gradiente y cambio de imagen de fondo para versión de escritorio */
+  }
+}
+
+/* Estilos base para .loopstudios__creation--soccer */
+.loopstudios__creation--soccer {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("./../images/mobile/image-soccer-team.jpg"); /* Imagen de fondo con gradiente para versión móvil */
+}
+
+/* Estilos para .loopstudios__creation--soccer en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation--soccer {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("./../images/desktop/image-soccer-team.jpg"); /* Gradiente y cambio de imagen de fondo para versión de escritorio */
+  }
+}
+
+/* Estilos base para .loopstudios__creation--gird */
+.loopstudios__creation--gird {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("./../images/mobile/image-grid.jpg"); /* Imagen de fondo con gradiente para versión móvil */
+}
+
+/* Estilos para el título dentro de .loopstudios__creation--gird */
+.loopstudios__creation--gird .loopstudios__heading--tertiary {
+  width: 30%; /* Ancho del título */
+}
+
+/* Estilos para .loopstudios__creation--gird en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation--gird {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("./../images/desktop/image-grid.jpg"); /* Gradiente y cambio de imagen de fondo para versión de escritorio */
+  }
+}
+
+/* Estilos base para .loopstudios__creation--above */
+.loopstudios__creation--above {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("./../images/mobile/image-from-above.jpg"); /* Imagen de fondo con gradiente para versión móvil */
+}
+
+/* Estilos para .loopstudios__creation--above en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation--above {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("./../images/desktop/image-from-above.jpg"); /* Gradiente y cambio de imagen de fondo para versión de escritorio */
+  }
+}
+
+/* Estilos base para .loopstudios__creation--pocket */
+.loopstudios__creation--pocket {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("./../images/mobile/image-pocket-borealis.jpg"); /* Imagen de fondo con gradiente para versión móvil */
+}
+
+/* Estilos para .loopstudios__creation--pocket en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation--pocket {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("./../images/desktop/image-pocket-borealis.jpg"); /* Gradiente y cambio de imagen de fondo para versión de escritorio */
+  }
+}
+
+/* Estilos base para .loopstudios__creation--curiosity */
+.loopstudios__creation--curiosity {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("./../images/mobile/image-curiosity.jpg"); /* Imagen de fondo con gradiente para versión móvil */
+}
+
+/* Estilos para .loopstudios__creation--curiosity en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation--curiosity {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("./../images/desktop/image-curiosity.jpg"); /* Gradiente y cambio de imagen de fondo para versión de escritorio */
+  }
+}
+
+/* Estilos base para .loopstudios__creation--fisheye */
+.loopstudios__creation--fisheye {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("./../images/mobile/image-fisheye.jpg"); /* Imagen de fondo con gradiente para versión móvil */
+}
+
+/* Estilos para .loopstudios__creation--fisheye en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creation--fisheye {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("./../images/desktop/image-fisheye.jpg"); /* Gradiente y cambio de imagen de fondo para versión de escritorio */
+  }
+}
+
+/* Estilos para .loopstudios__wrapper-intro en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__wrapper-intro {
+    display: grid; /* Usa un diseño de cuadrícula */
+    grid-template-columns: 65% 35%; /* Define el tamaño de las columnas */
+    grid-template-rows: 60rem; /* Define el tamaño de las filas */
+  }
+}
+
+/* Estilos base para .loopstudios__creations */
+.loopstudios__creations {
+  display: grid; /* Usa un diseño de cuadrícula */
+  grid-template-rows: 7.3rem repeat(8, 1fr) 5rem; /* Define las filas con tamaños variables */
+  align-items: center; /* Alineación vertical de los elementos */
+  gap: 2.2rem; /* Espacio entre los elementos de la cuadrícula */
+}
+
+/* Estilos para .loopstudios__creations en pantallas de al menos 810px de ancho */
+@media (min-width: 810px) {
+  .loopstudios__creations {
+    grid-template-rows: 7.3rem repeat(4, 1fr) 5rem; /* Ajuste en las filas de la cuadrícula */
+    grid-template-columns: repeat(2, 1fr); /* Define dos columnas */
+  }
+}
+
+/* Estilos para .loopstudios__creations en pantallas de al menos 1140px de ancho */
+@media (min-width: 1140px) {
+  .loopstudios__creations {
+    grid-template-rows: 10rem repeat(2, 1fr); /* Ajuste en las filas de la cuadrícula */
+    grid-template-columns: repeat(4, 1fr); /* Define cuatro columnas */
+    align-items: start; /* Alineación vertical al inicio */
+    gap: 3rem; /* Aumenta el espacio entre los elementos */
+  }
+}
+
+/* Estilos base para .loopstudios__footer */
+.loopstudios__footer {
+  display: grid; /* Usa un diseño de cuadrícula */
+  align-items: center; /* Alineación vertical de los elementos */
+  justify-items: center; /* Alineación horizontal de los elementos */
+}
+
+/* Establece estilos específicos para el pie de página de Loopstudios cuando el ancho de la pantalla es al menos 810px */
+@media (min-width: 810px) {
+  .loopstudios__footer {
+    grid-template-columns: repeat(2, 1fr); /* Divide el pie de página en dos columnas */
+    grid-template-rows: repeat(2, 5rem); /* Divide el pie de página en dos filas de 5rem de alto */
+    align-items: end; /* Alinea los elementos internos al final en el eje vertical */
+    justify-items: unset; /* Restablece la justificación de los elementos internos a su valor predeterminado */
+  }
+}
+
+/* Estilos base para el pie de página de Loopstudios */
+.loopstudios__footer {
+  background-color: black; /* Fondo negro */
+  text-align: center; /* Texto centrado */
+  margin-top: 10rem; /* Margen superior de 10rem */
+  padding: 5rem 2.5rem; /* Relleno de 5rem en la parte superior e inferior, 2.5rem a los lados */
+}
+
+/* Estilos para todos los elementos dentro del pie de página, excepto el último */
+.loopstudios__footer > *:not(:last-child) {
+  margin-bottom: 2rem; /* Margen inferior de 2rem para cada elemento */
+}
+
+/* Estilos específicos para el pie de página en pantallas de al menos 810px */
+@media (min-width: 810px) {
+  .loopstudios__footer {
+    padding: 5rem 8rem; /* Aumenta el relleno lateral a 8rem */
+  }
+  .loopstudios__footer > *:not(:last-child) {
+    margin: 0; /* Elimina el margen inferior para estos elementos */
+  }
+}
+
+/* Estilos específicos para el pie de página en pantallas de al menos 1140px */
+@media (min-width: 1140px) {
+  .loopstudios__footer {
+    margin-top: 18rem; /* Aumenta el margen superior a 18rem */
+    padding: 2rem 16rem 4rem 16rem; /* Ajusta el relleno */
+  }
+}
+
+/* Estilos para los derechos de autor en el pie de página */
+.loopstudios__copyrights {
+  color: dimgray; /* Color gris tenue para el texto */
+}
+
+/* Estilos para la lista de íconos en el pie de página */
+.loopstudios__list--icon {
+  list-style: none; /* Elimina los estilos de lista por defecto */
+  display: flex; /* Usa flexbox para la disposición de los elementos */
+  align-items: center; /* Centra los elementos en el eje vertical */
+  justify-content: center; /* Centra los elementos en el eje horizontal */
+  gap: 1.5rem; /* Espacio de 1.5rem entre elementos */
+}
+
+/* Estilos específicos para la lista de íconos en pantallas de al menos 810px */
+@media (min-width: 810px) {
+  .loopstudios__list--icon {
+    align-items: baseline; /* Alinea los elementos a la línea base */
+    justify-content: end; /* Alinea los elementos al final en el eje horizontal */
+  }
+}
+
+/* Estilos para cada elemento de ícono en la lista */
+.loopstudios__item--icon {
+  margin: 0; /* Sin margen */
+}
+
+/* Estilos para el enlace del ícono después de cada elemento */
+.loopstudios__link--icon::after {
+  width: 100%; /* Hace que el pseudo-elemento after ocupe el 100% del ancho */
+}
+
+/* Estilos para la modal */
+.modal {
+  display: none; /* Cambiado a flex cuando está visible */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: auto; /* Permite el desplazamiento si el contenido es más alto que la pantalla */
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para el contenido de la modal */
+.modal__content {
+  position: relative;
+  margin: auto;
+  padding: 20px; /* Puedes ajustar o reducir el padding si es necesario */
+  width: auto; /* Se ajusta al tamaño del contenido interno */
+  max-width: 90%; /* Aumenta el porcentaje si quieres que la imagen sea más grande */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Estilos para el botón de cerrar */
+.modal__close {
+  color: #aaa;
+  position: absolute;
+  top: 10px; /* Ajusta la posición según sea necesario */
+  right: 10px; /* Ajusta la posición según sea necesario */
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para mostrar la modal cuando se hace clic en la imagen */
+.modal:target {
+  display: flex;
+}
+
+/* Estilos para la imagen dentro de la modal */
+.modal__content img {
+  display: block; /* Asegurarse de que la imagen sea un bloque */
+  max-width: 100%; /* La imagen puede ser hasta el 100% del .modal__content */
+  max-height: 80vh; /* Ajusta este valor si quieres que la imagen sea más grande */
+  margin: auto; /* Centrado horizontal */
+}
+
+/* Estilos para los botones de navegación */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centrar verticalmente los botones */
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Posición para el botón "anterior" */
+.prev {
+  left: 25px;
+}
+
+/* Posición para el botón "siguiente" */
+.next {
+  right: 25px;
+}
+
+/* Estilo al pasar el mouse sobre los botones de navegación */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}

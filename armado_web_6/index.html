@@ -1,0 +1,263 @@
+<!DOCTYPE html> <!-- Define que el documento es HTML5 -->
+<html lang="en"> <!-- Inicia el documento HTML y especifica el idioma (inglés) -->
+  <head> <!-- Sección de metadatos del documento -->
+    <meta charset="UTF-8" /> <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Asegura una visualización adecuada y un zoom adecuado en dispositivos móviles -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/> <!-- Define un favicon para la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" /> <!-- Optimiza la conexión con Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <!-- Optimiza la conexión con el servicio de fuentes de Google, permitiendo solicitudes CORS -->
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet"/> <!-- Incluye fuentes de Google Fonts en la página -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- Enlaza un archivo CSS externo para estilizar la página -->
+
+    <title>Loopstudios Landing Page</title> <!-- Define el título que se muestra en la pestaña del navegador -->
+  </head>
+  <body>
+    <!-- Sección principal de la página -->
+    <section class="loopstudios__hero" aria-label="hero">
+      <!-- Contenedor principal dentro de la sección -->
+      <div class="loopstudios__container">
+        <!-- Encabezado de la página -->
+        <header class="loopstudios__header">
+          <!-- Envoltorio para el logo y el botón de menú hamburguesa -->
+          <div class="loopstudios__wrapper-logo">
+            <!-- Imagen del logo -->
+            <img src="./images/logo.svg" alt="loopstudios" class="loopstudios__logo loopstudios__logo--primary"/>
+  
+            <!-- Botón de menú tipo hamburguesa para dispositivos móviles -->
+            <button class="loopstudios__btn loopstudios__btn--hamburger" aria-expanded="false" aria-label="hamburger">
+              <img src="./images/icon-hamburger.svg" alt="" aria-hidden="true" class="loopstudios__icon-hamburger"/>
+            </button>
+          </div>
+  
+          <!-- Navegación principal de la página -->
+          <nav class="loopstudios__nav loopstudios__nav--primary" aria-label="primary nav">
+            <!-- Lista de enlaces de navegación -->
+            <ul class="loopstudios__list loopstudios__list--primary">
+              <!-- Elementos individuales de la lista -->
+              <li class="loopstudios__item"><a href="#" class="loopstudios__link loopstudios__link--primary">About</a></li>
+              <li class="loopstudios__item"><a href="#" class="loopstudios__link loopstudios__link--primary">Careers</a></li>
+              <li class="loopstudios__item"><a href="#" class="loopstudios__link loopstudios__link--primary">Events</a></li>
+              <li class="loopstudios__item"><a href="#" class="loopstudios__link loopstudios__link--primary">Products</a></li>
+              <li class="loopstudios__item"><a href="#" class="loopstudios__link loopstudios__link--primary">Support</a></li>
+            </ul>
+          </nav>
+        </header>
+  
+        <!-- Título principal de la página -->
+        <h1 class="loopstudios__heading loopstudios__heading--primary">Immersive experiences that deliver</h1>
+      </div>
+    </section>
+
+    <main>
+      <!-- Sección introductoria de la página -->
+      <div class="loopstudios__intro">
+        <!-- Contenedor para la introducción -->
+        <div class="loopstudios__container loopstudios__wrapper-intro">
+          <!-- Espacio para una imagen introductoria -->
+          <div class="loopstudios__intro-img"></div>
+          
+          <!-- Descripción de la compañía -->
+          <div class="loopstudios__desc">
+            <h2 class="loopstudios__heading loopstudios__heading--secondary">The leader in interactive VR</h2>
+
+            <p class="loopstudios__text">
+              Founded in 2011, Loopstudios has been producing world-class
+              virtual reality projects for some of the best companies around the
+              globe. Our award-winning creations have transformed businesses
+              through digital experiences that bind to their brand.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección que muestra las creaciones de la empresa -->
+      <section class="loopstudios__creations" aria-label="projects">
+        <h2 class="loopstudios__heading loopstudios__heading--secondary">Our creations</h2>
+        <!-- Cada div representa un proyecto o creación diferente -->
+        <!-- Enlace y modal para "Deep earth" -->
+        <a href="#img1">
+          <div class="loopstudios__creation loopstudios__creation--earth">
+              <h3 class="loopstudios__heading loopstudios__heading--tertiary">Deep earth</h3>
+          </div>
+        </a>
+        <div class="modal" id="img1">
+          <div class="modal__content">
+              <a href="#img8" class="prev">&#10094;</a>
+              <a href="#cerrar" class="modal__close">&times;</a>
+              <a href="#img2" class="next">&#10095;</a>
+              <img src="images/desktop/image-deep-earth.jpg" alt="Deep earth" />
+          </div>
+        </div>
+
+                <!-- Enlace y modal para "Night arcade" -->
+        <!-- Enlace y modal para "Night arcade" -->
+        <a href="#img2">
+          <div class="loopstudios__creation loopstudios__creation--arcade">
+              <h3 class="loopstudios__heading loopstudios__heading--tertiary">Night arcade</h3>
+          </div>
+        </a>
+        <div class="modal" id="img2">
+          <div class="modal__content">
+              <a href="#img1" class="prev">&#10094;</a>
+              <a href="#cerrar" class="modal__close">&times;</a>
+              <a href="#img3" class="next">&#10095;</a>
+              <img src="images/desktop/image-night-arcade.jpg" alt="Night arcade" />
+          </div>
+        </div>
+
+        <!-- Enlace y modal para "Soccer team VR" -->
+        <a href="#img3">
+          <div class="loopstudios__creation loopstudios__creation--soccer">
+              <h3 class="loopstudios__heading loopstudios__heading--tertiary">Soccer team VR</h3>
+          </div>
+        </a>
+        <div class="modal" id="img3">
+          <div class="modal__content">
+              <a href="#img2" class="prev">&#10094;</a>
+              <a href="#cerrar" class="modal__close">&times;</a>
+              <a href="#img4" class="next">&#10095;</a>
+              <img src="images/desktop/image-soccer-team.jpg" alt="Soccer team VR" />
+          </div>
+        </div>
+
+        <!-- Enlace y modal para "The grid" -->
+        <a href="#img4">
+          <div class="loopstudios__creation loopstudios__creation--gird">
+              <h3 class="loopstudios__heading loopstudios__heading--tertiary">The grid</h3>
+          </div>
+        </a>
+        <div class="modal" id="img4">
+          <div class="modal__content">
+              <a href="#img3" class="prev">&#10094;</a>
+              <a href="#cerrar" class="modal__close">&times;</a>
+              <a href="#img5" class="next">&#10095;</a>
+              <img src="images/desktop/image-grid.jpg" alt="The grid" />
+          </div>
+        </div>
+
+        <!-- Enlace y modal para "From up above VR" -->
+        <a href="#img5">
+          <div class="loopstudios__creation loopstudios__creation--above">
+              <h3 class="loopstudios__heading loopstudios__heading--tertiary">From up above VR</h3>
+          </div>
+        </a>
+        <div class="modal" id="img5">
+          <div class="modal__content">
+              <a href="#img4" class="prev">&#10094;</a>
+              <a href="#cerrar" class="modal__close">&times;</a>
+              <a href="#img6" class="next">&#10095;</a>
+              <img src="images/desktop/image-from-above.jpg" alt="From up above VR" />
+          </div>
+        </div>
+
+        <!-- Enlace y modal para "Pocket borealis" -->
+        <a href="#img6">
+          <div class="loopstudios__creation loopstudios__creation--pocket">
+              <h3 class="loopstudios__heading loopstudios__heading--tertiary">Pocket borealis</h3>
+          </div>
+        </a>
+        <div class="modal" id="img6">
+          <div class="modal__content">
+              <a href="#img5" class="prev">&#10094;</a>
+              <a href="#cerrar" class="modal__close">&times;</a>
+              <a href="#img7" class="next">&#10095;</a>
+              <img src="images/desktop/image-pocket-borealis.jpg" alt="Pocket borealis" />
+          </div>
+        </div>
+
+        <!-- Enlace y modal para "The curiosity" -->
+        <a href="#img7">
+          <div class="loopstudios__creation loopstudios__creation--curiosity">
+              <h3 class="loopstudios__heading loopstudios__heading--tertiary">The curiosity</h3>
+          </div>
+        </a>
+        <div class="modal" id="img7">
+          <div class="modal__content">
+              <a href="#img6" class="prev">&#10094;</a>
+              <a href="#cerrar" class="modal__close">&times;</a>
+              <a href="#img8" class="next">&#10095;</a>
+              <img src="images/desktop/image-curiosity.jpg" alt="The curiosity" />
+          </div>
+        </div>
+
+        <!-- Enlace y modal para "Make it fisheye" -->
+        <a href="#img8">
+          <div class="loopstudios__creation loopstudios__creation--fisheye">
+              <h3 class="loopstudios__heading loopstudios__heading--tertiary">Make it fisheye</h3>
+          </div>
+        </a>
+        <div class="modal" id="img8">
+          <div class="modal__content">
+              <a href="#img7" class="prev">&#10094;</a>
+              <a href="#cerrar" class="modal__close">&times;</a>
+              <a href="#img1" class="next">&#10095;</a>
+              <img src="images/desktop/image-fisheye.jpg" alt="Make it fisheye" />
+          </div>
+        </div>
+
+        <!-- Botón para ver todas las creaciones -->
+        <button type="button" class="loopstudios__btn loopstudios__btn--see">See all</button>
+      </section>
+    </main>
+
+<!-- Pie de página -->
+<footer class="loopstudios__footer">
+  
+  <!-- Logotipo de Loopstudios -->
+  <img src="./images/logo.svg" alt="loopstudios" class="loopstudios__logo loopstudios__logo--secondary"/>
+
+  <!-- Navegación secundaria -->
+  <nav class="loopstudios__nav loopstudios__nav--secondary" aria-label="secondary nav">
+    <ul class="loopstudios__list loopstudios__list--secondary">
+      <!-- Elementos de la lista de navegación -->
+      <li class="loopstudios__item">
+        <a href="#" class="loopstudios__link">About</a>
+      </li>
+      <li class="loopstudios__item">
+        <a href="#" class="loopstudios__link">Careers</a>
+      </li>
+      <li class="loopstudios__item">
+        <a href="#" class="loopstudios__link">Events</a>
+      </li>
+      <li class="loopstudios__item">
+        <a href="#" class="loopstudios__link">Products</a>
+      </li>
+      <li class="loopstudios__item">
+        <a href="#" class="loopstudios__link">Support</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Lista de íconos para redes sociales -->
+  <ul class="loopstudios__list loopstudios__list--icon">
+    <!-- Elementos de la lista de íconos -->
+    <li class="loopstudios__item loopstudios__item--icon">
+      <a href="#" class="loopstudios__link loopstudios__link--icon" aria-label="social media">
+        <img src="./images/icon-facebook.svg" alt="" aria-hidden="true" class="loopstudios__icon"/>
+      </a>
+    </li>
+    <li class="loopstudios__item loopstudios__item--icon">
+      <a href="#" class="loopstudios__link loopstudios__link--icon" aria-label="social media">
+        <img src="./images/icon-twitter.svg" alt="" aria-hidden="true" class="loopstudios__icon"/>
+      </a>
+    </li>
+    <li class="loopstudios__item loopstudios__item--icon">
+      <a href="#" class="loopstudios__link loopstudios__link--icon" aria-label="social media">
+        <img src="./images/icon-pinterest.svg" alt="" aria-hidden="true" class="loopstudios__icon"/>
+      </a>
+    </li>
+    <li class="loopstudios__item loopstudios__item--icon">
+      <a href="#" class="loopstudios__link loopstudios__link--icon" aria-label="social media">
+        <img src="./images/icon-instagram.svg" alt="" aria-hidden="true" class="loopstudios__icon"/>
+      </a>
+    </li>
+  </ul>
+  
+  <!-- Derechos de autor -->
+  <div class="loopstudios__wrapper-copyright">
+    <p class="loopstudios__copyrights">© 2021 Loopstudios. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

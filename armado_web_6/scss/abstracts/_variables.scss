@@ -1,0 +1,23 @@
+// Definición de colores primarios y secundarios usando el formato HSL (Hue, Saturation, Lightness).
+// Estas son variables de color que puedes reutilizar a lo largo de tu proyecto para mantener una consistencia de colores.
+
+// $color-primary: Define el color primario del tema. En este caso, es blanco (hsl(0, 0%, 100%)).
+$color-primary: hsl(0, 0%, 100%);
+
+// $color-primary--dark: Define una variante más oscura del color primario. En este caso, es negro (hsl(0, 0%, 0%)).
+$color-primary--dark: hsl(0, 0%, 0%);
+
+// $color-secondary: Define el color secundario del tema. En este caso, es un gris medio (hsl(0, 0%, 55%)).
+$color-secondary: hsl(0, 0%, 55%);
+
+// $color-secondary--dark: Define una variante más oscura del color secundario. En este caso, es un gris oscuro (hsl(0, 0%, 41%)).
+$color-secondary--dark: hsl(0, 0%, 41%);
+
+// Definición de fuentes primarias y secundarias para el texto.
+// Estas son variables de fuente que puedes utilizar para mantener una consistencia tipográfica.
+
+// $font-primary: Define la fuente primaria a utilizar. En este caso, 'Josefin Sans' con una alternativa sans-serif.
+$font-primary: 'Josefin Sans', sans-serif;
+
+// $font-secondary: Define la fuente secundaria a utilizar. En este caso, 'Alata' con una alternativa sans-serif.
+$font-secondary: 'Alata', sans-serif;
